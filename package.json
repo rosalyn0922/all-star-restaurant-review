@@ -1,0 +1,19 @@
+{
+  "name": "all-star-restaurant-review",
+  "version": "1.0.0",
+  "description": "Making a full site responsive and offline capability",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rosalyn0922/all-star-restaurant-review.git"
+  },
+  "author": "Rosalyn Guerrero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rosalyn0922/all-star-restaurant-review/issues"
+  },
+  "homepage": "https://github.com/rosalyn0922/all-star-restaurant-review#readme"
+}
