@@ -20,6 +20,7 @@
   "homepage": "https://github.com/rosalyn0922/all-star-restaurant-review#readme",
   "dependencies": {
     "eslint": "^5.9.0",
+    "eslint-plugin-node": "^8.0.0",
     "express": "^4.16.4",
     "prettier": "^1.15.1",
     "prettier-eslint": "^8.8.2"
