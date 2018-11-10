@@ -1,10 +1,12 @@
 {
   "name": "all-star-restaurant-review",
   "version": "1.0.0",
-  "description": "Making a full site responsive and offline capability",
+  "description": "Making a full site responsive and offline capability. You must install ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "start:live": "live-server ./public"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,16 @@
   "bugs": {
     "url": "https://github.com/rosalyn0922/all-star-restaurant-review/issues"
   },
-  "homepage": "https://github.com/rosalyn0922/all-star-restaurant-review#readme"
+  "homepage": "https://github.com/rosalyn0922/all-star-restaurant-review#readme",
+  "dependencies": {
+    "eslint": "^5.9.0",
+    "express": "^4.16.4",
+    "prettier": "^1.15.1",
+    "prettier-eslint": "^8.8.2"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "live-server": "^1.2.0"
+  }
 }
