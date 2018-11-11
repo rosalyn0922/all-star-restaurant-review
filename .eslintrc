@@ -7,6 +7,7 @@
     "es6": true
   },
   "rules": {
-    "semi":["error", "never"]
+    "semi":["error", "never"],
+    "no-undef": "off"
   }
 }
