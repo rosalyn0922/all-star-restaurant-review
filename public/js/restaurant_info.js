@@ -5,7 +5,7 @@ const mapToken = 'pk.eyJ1Ijoicm9zYWx5bjA5MjIiLCJhIjoiY2pvYnd1eXZxMHY5ODNxbWs1ejV
 /**
  * Initialize map as soon as the page is loaded.
  */
-document.addEventListener('DOMContentLoaded', (event) => {  
+document.addEventListener('DOMContentLoaded', () => {  
   initMap()
 })
 
@@ -88,6 +88,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   address.innerHTML = restaurant.address
 
   const image = document.getElementById('restaurant-img')
+  image.title = `${restaurant.name} located on ${restaurant.address}`  
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant)
 
@@ -148,23 +149,20 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  * Create review HTML and add it to the webpage.
  */
 createReviewHTML = (review) => {
-  const li = document.createElement('li')
-  const name = document.createElement('p')
-  name.innerHTML = review.name
-  li.appendChild(name)
+  const li = document.createElement('li')  
+    
+  const reviewer = document.createElement('p')
+  reviewer.className = 'reviewer-info'
+  reviewer.innerHTML = `Rating of ${review.rating} by ${review.name} on ${review.date}`  
+  li.appendChild(reviewer)
+  
 
-  const date = document.createElement('p')
-  date.innerHTML = review.date
-  li.appendChild(date)
-
-  const rating = document.createElement('p')
-  rating.innerHTML = `Rating: ${review.rating}`
-  li.appendChild(rating)
-
+  const blockQuote = document.createElement('blockquote')  
   const comments = document.createElement('p')
   comments.innerHTML = review.comments
-  li.appendChild(comments)
-
+  blockQuote.append(comments)
+  li.appendChild(blockQuote)
+  
   return li
 }
 
