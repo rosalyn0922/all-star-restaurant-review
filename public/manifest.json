@@ -1,0 +1,16 @@
+{
+  "short_name": "RestaurantReview",
+  "name": "All Star Restaurant Review",
+  "icons": [
+    {
+      "src": "/img/favicon.ico",
+      "type": "image/png",
+      "sizes": "32x32"
+    }
+  ],
+  "start_url": "/index.html?source=pwa",
+  "background_color": "#3397DB",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#3397DB"
+}

@@ -89,19 +89,6 @@ initMap = () => {
 
   updateRestaurants()
 }
-/* window.initMap = () => {
-  let loc = {
-    lat: 40.722216,
-    lng: -73.987501
-  };
-  self.map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    center: loc,
-    scrollwheel: false
-  });
-  updateRestaurants();
-} */
-
 /**
  * Update page and map for current restaurants.
  */
@@ -124,7 +111,6 @@ updateRestaurants = () => {
     }
   })
 }
-
 /**
  * Clear current restaurants, their HTML and remove their map markers.
  */
@@ -141,7 +127,6 @@ resetRestaurants = (restaurants) => {
   self.markers = []
   self.restaurants = restaurants
 }
-
 /**
  * Create all restaurants HTML and add them to the webpage.
  */
@@ -152,7 +137,6 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
   })
   addMarkersToMap()
 }
-
 /**
  * Create restaurant HTML.
  */
@@ -174,7 +158,7 @@ createRestaurantHTML = (restaurant) => {
   name.innerHTML = restaurant.name
   contentWrap.append(name)
   
-  const neighborhood = document.createElement('p')
+  const neighborhood = document.createElement('h2')
   neighborhood.innerHTML = restaurant.neighborhood
   contentWrap.append(neighborhood)
 
@@ -193,7 +177,6 @@ createRestaurantHTML = (restaurant) => {
 
   return li
 }
-
 /**
  * Add markers for current restaurants to the map.
  */
@@ -208,13 +191,3 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker)
   })
 }
-/* addMarkersToMap = (restaurants = self.restaurants) => {
-  restaurants.forEach(restaurant => {
-    // Add marker to the map
-    const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.map);
-    google.maps.event.addListener(marker, 'click', () => {
-      window.location.href = marker.url
-    });
-    self.markers.push(marker);
-  });
-} */

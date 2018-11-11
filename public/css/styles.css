@@ -254,9 +254,14 @@ nav ul li {
   margin: 20px 0 10px;
   text-transform: uppercase;
 }
+#restaurants-list li h2 { 
+  margin: 0;
+  padding: 0;
+  font-size: 1.250em;
+}
 #restaurants-list p {
   margin: 0;
-  font-size: 0.875em; /* 11pt*/
+  /* font-size: 0.875em;  11pt*/
 }
 #restaurants-list li a {
   background-color: orange;
@@ -285,10 +290,10 @@ nav ul li {
   z-index: 9999;
 }
 .inside #maincontent {
-  display: flex;
-  flex-flow: row nowrap;
+  /* display: flex;
+  flex-flow: column nowrap;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: flex-start; */
 }
 .inside .info-reviews {
   flex: 1;
@@ -296,24 +301,15 @@ nav ul li {
   overflow-y: auto;  
 }
 .inside #map-container {
-  background: blue none repeat scroll 0 0;
-  height: 98%;
-  flex: 1;
-  /* position: fixed;
-  right: 0;
-  top: 80px;
-  width: 50%; */
+  background: blue none repeat scroll 0 0;  
+  max-height: 400px;
+  display: block;
 }
 .inside #map {
-  background-color: #ccc;
-  height: 100%;
+  height: 400px;
   width: 100%;
+  background-color: #ccc;      
 }
-/* .inside #footer {
-  bottom: 0;
-  position: absolute;
-  width: 50%;
-} */
 #restaurant-name {
   color: #f18200;
   font-family: Arial,sans-serif;
@@ -358,7 +354,7 @@ nav ul li {
 }
 #reviews-container h2 {
   color: #f58500;
-  font-size: 24pt;
+  font-size: 1.424em;
   font-weight: 300;
   letter-spacing: -1px;
   padding-bottom: 1pt;
@@ -399,7 +395,7 @@ nav ul li {
 
 @media screen and (min-device-width: 320px) and (max-device-width: 767px) {
   html, body {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   nav h1 a {
@@ -407,11 +403,11 @@ nav ul li {
   }
 
   #restaurants-list li a {
-    font-size: 1.125em;
+    font-size: 1.188em;
   }
 
   #restaurants-list p {
-    font-size: 1.125em;
+    font-size: 1.188em;
   }
 
   #restaurant-container {    
@@ -460,6 +456,6 @@ nav ul li {
 
 @media screen and (min-device-width: 768px) and (max-device-width: 1199px) {
   html, body {
-    font-size: 24px;
+    font-size: 26px;
   }
 }
