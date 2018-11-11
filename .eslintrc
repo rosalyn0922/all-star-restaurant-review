@@ -8,6 +8,9 @@
   },
   "rules": {
     "semi":["error", "never"],
-    "no-undef": "off"
+    "no-undef": "off",
+    "no-unused-vars": "off",
+    "no-console": "off",
+    "no-useless-escape": "off"
   }
 }

@@ -8,7 +8,7 @@ const mapToken = 'pk.eyJ1Ijoicm9zYWx5bjA5MjIiLCJhIjoiY2pvYnd1eXZxMHY5ODNxbWs1ejV
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', () => {   
   initMap() // added
   fetchNeighborhoods()
   fetchCuisines()
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 fetchNeighborhoods = () => {
   DBHelper.fetchNeighborhoods((error, neighborhoods) => {
     if (error) { // Got an error
-      console.error(error)
+      console.log(error)
     } else {
       self.neighborhoods = neighborhoods
       fillNeighborhoodsHTML()
