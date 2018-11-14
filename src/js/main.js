@@ -154,11 +154,11 @@ createRestaurantHTML = (restaurant) => {
   li.append(image)
 
   
-  const name = document.createElement('h1')
+  const name = document.createElement('h2')
   name.innerHTML = restaurant.name
   contentWrap.append(name)
   
-  const neighborhood = document.createElement('h2')
+  const neighborhood = document.createElement('h3')
   neighborhood.innerHTML = restaurant.neighborhood
   contentWrap.append(neighborhood)
 

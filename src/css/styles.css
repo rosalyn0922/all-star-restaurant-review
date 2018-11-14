@@ -38,7 +38,7 @@ body {
   position:relative;
   display: flex;
   flex-direction: column;  
-  padding-top: 95px; /* the height of the header */
+  padding-top: 73px; /* the height of the header */
 }
 ul, li {
 	font-family: Arial, Helvetica, sans-serif;
@@ -84,6 +84,21 @@ header {
   z-index: 9000;
 }
 
+header h1 {
+  width: 100%;  
+  background-color: #252831;
+  margin: auto;
+  text-align:center;
+  padding: 15px 0 0 0;  
+}
+header  h1 a {
+  color: #fff;
+  font-size: 1.125em; /* 14pt */
+  font-weight: 200;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+
 /* ======================= Main ============================ */
 #maincontent {  
   flex: 10;
@@ -98,7 +113,7 @@ footer {
 /* ====================== Navigation ====================== */
 nav {  
   width: 100%;
-  height: 80px;
+  /* height: 80px; */
   background-color: #252831;
   text-align:center;
   padding: 15px 0 0 0;
@@ -166,15 +181,19 @@ nav ul li {
   background-color: #ccc;
 }
 /* ====================== Restaurant Filtering ====================== */
-.filter-options {
+.filter-options {  
   width: 100%;
   height: 50px;
-  background-color: #3397DB;
+  background-color: #3397DB;  
   align-items: center;
   padding: 15px 0 0 0;
+
+  align-items: center;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  max-width: 1600px;
+  margin: 0 auto;  
 }
 .filter-options .wrap {
   display: flex;
@@ -187,6 +206,7 @@ nav ul li {
   line-height: 1;
   margin: 0 20px;
   display: flex;
+  padding: 0 20px 0;
   justify-content: flex-start;
 }
 .filter-options #neighborhoods-select {
@@ -208,24 +228,26 @@ nav ul li {
 #restaurants-list {
   background-color: #f3f3f3;
   list-style: outside none none;
-  margin: 0;
+  margin: 0 auto;
   padding: 30px 15px 60px;
   text-align: center;
   display: flex;
   flex-flow: row wrap;  
+  max-width: 1600px;
 }
 #restaurants-list li {
   background-color: #fff;
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
   margin: 10px;
-  min-height: 380px;
-  /* padding: 0 30px 25px; */
+  min-height: 380px;  
   text-align: left;
   width: 270px;    
   display: flex;
   flex-flow: column nowrap;
-  justify-content: flex-start;  
+  justify-content: flex-start;
+  flex: 1 1 20%;
+  min-width: 240px;
 }
 #restaurants-list .content-wrap {
   padding: 0 30px 10px;
@@ -244,7 +266,7 @@ nav ul li {
   min-width: 100%;
   height: auto;  
 }
-#restaurants-list li h1 {
+#restaurants-list li h2 {
   color: #f18200;
   font-family: Arial,sans-serif;
   font-size: 1.313em; /* 14pt to 18pt */
@@ -254,7 +276,7 @@ nav ul li {
   margin: 20px 0 10px;
   text-transform: uppercase;
 }
-#restaurants-list li h2 { 
+#restaurants-list li h3 { 
   margin: 0;
   padding: 0;
   font-size: 1.250em;
@@ -289,12 +311,6 @@ nav ul li {
   width: 100%;
   z-index: 9999;
 }
-.inside #maincontent {
-  /* display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  align-items: flex-start; */
-}
 .inside .info-reviews {
   flex: 1;
   display: flex;
@@ -303,12 +319,8 @@ nav ul li {
   align-items: flex-start;
   max-height: 100%;
   overflow-y: auto;  
-}
-.inside #restaurant-container {
-  flex: 1;
-}
-.inside #reviews-container {
-  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;  
@@ -338,6 +350,7 @@ nav ul li {
   font-size: 1em;
   margin: 10px 0px;
   width: 100%;
+  text-align: center;
 }
 #restaurant-cuisine {
   background-color: #333;
@@ -353,15 +366,17 @@ nav ul li {
 }
 
 #restaurant-container .restaurant-info {
-  padding: 0 40px; 
+  padding: 0 20px; 
 }
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 10px 0px 30px;  
+  /* padding: 10px 0px 30px;   */
+  flex: 1 1 50%;
 }
 #reviews-container {
-  padding: 30px 40px 140px;  
+  padding: 10px 20px 140px;  
+  background-color: #d9d9d9;
 }
 #reviews-container h2 {
   color: #f58500;
@@ -392,19 +407,60 @@ nav ul li {
   font-weight: bold;
   font-size: 1.125em;
 }
+#restaurant-hours {
+  width: 100%;
+}
 #restaurant-hours tr:nth-child(even) {
   background-color: #d9d9d9;
 }
 #restaurant-hours td {
   color: #666;
+  padding: 5PX;
 }
 #reviews-list blockquote {
   font-style: italic;
   font-size: 1.25em;
 }
 
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  html, body {
+    font-size: 18px;
+  }
+  nav h1 a {
+    font-size: 0.8em;
+  }  
+  p, a {
+    font-size: 1em;
+  }
+  .filter-options {
+    flex-flow: column nowrap;     
+    height: 150px; 
+    padding: 0;
+  }
+  .filter-options h2 {
+    flex: 1;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    padding: 0;
+  }
+  .filter-options .wrap {
+    background-color: #d9d9d9;
+    width: 100%;        
+    flex: 1;        
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
+  }
 
-@media screen and (min-device-width: 320px) and (max-device-width: 767px) {
+  #restaurant-hours td {
+    padding: 10px;
+  }
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 767px)  {
   html, body {
     font-size: 28px;
   }
@@ -428,15 +484,24 @@ nav ul li {
 
   #reviews-container {    
     padding: 20px 0px 30px;
-    width:100%;
+    width:100%;    
   }
 
   #reviews-container h2 {   
     margin-left: 20px;
+    text-align: center
   } 
 
   .inside .info-reviews {
     flex-flow: column nowrap;  
+  }
+
+  #reviews-list li {
+    width: 96%;    
+  }
+
+  #restaurant-hours td {
+    padding: 10px;
   }
 
   p, a {
@@ -454,7 +519,7 @@ nav ul li {
     width: 100%;
     justify-content: center;
     align-items: center;
-    font-size: 1em;
+    font-size: 1.5em;
   }
   .filter-options .wrap {
     background-color: #d9d9d9;
@@ -462,13 +527,15 @@ nav ul li {
     flex: 1;        
     justify-content: space-evenly;
     align-items: center;
+    padding: 15px 0;
   }
 
   .filter-options .wrap select {
-    font-size: 1.5em;
+    font-size: 1.2em;
     width: 100%;
     height: 50px;
   }
+
 }
 
 @media screen and (min-device-width: 768px) and (max-device-width: 1199px) {
